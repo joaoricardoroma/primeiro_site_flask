@@ -8,3 +8,15 @@ def home():
 @app.route('/contato')
 def contact():
     return 'contato'
+
+@app.route('/pokemons')
+def pokemons():
+
+    return render_template("pokemons.html", data=[])
+
+@app.route('/pokemon/<int:id>')
+def pokemon(id):
+    data = {
+
+    }
+    return render_template("pokemon.html", data= data)
