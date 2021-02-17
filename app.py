@@ -21,6 +21,6 @@ def pokemons():
 @app.route('/pokemon/<int:id>')
 def pokemon(id):
     data = {
-
+        "name": "bulbasaur"
     }
     return render_template("pokemon.html", data=data)
