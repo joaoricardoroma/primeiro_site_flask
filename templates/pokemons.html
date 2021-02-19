@@ -2,6 +2,7 @@
 <head>
     <h1> Lista dos pokemons</h1>
     <title>Pokedex - Lista de Pokemons</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 
 </head>
 <body>
@@ -10,16 +11,18 @@
     <li>
         <table border="1">
             <tr>
-                <td class="colors-{{ pokemon.types.0.type.name }}">
+                <td class="color-{{ pokemon.types.0.type.name }}">
                     <a href="http://127.0.0.1:5000/pokemon/{{pokemon.id}}">
                         <img src="{{ pokemon.sprites.other.dream_world.front_default }}" alt="{{pokemon.name}}"
                              width="50"
                              height="50" align="middle">
                     </a>
                 </td>
-
                 <td class="colors-{{ pokemon.types.0.type.name }}" width="150px">{{pokemon.name}} </td>
+                <td>
+                    <img width="50" height="50" src="{{ url_for('static', filename='badge_'+pokemon.types.0.type.name+'.jpeg') }}" />
 
+                </td>
         </table>
     </li>
     {% endfor %}
