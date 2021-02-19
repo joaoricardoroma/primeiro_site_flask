@@ -1,6 +1,10 @@
 from storage import Pokemon
 from flask import Flask, render_template
+
 import requests
+
+
+
 app = Flask(__name__)
 
 
@@ -16,6 +20,7 @@ def contact():
 
 @app.route('/pokemons')
 def pokemons():
+
     r = requests.get("https://pokeapi.co/api/v2/pokemon?limit=1118")
     result_api = r.json()
     pokemons = []
@@ -33,7 +38,6 @@ def pokemons():
         pokemons.append(pokemon)
 
     return render_template("pokemons.html", data=pokemons)
-
 
 @app.route('/pokemon/<int:id>')
 def pokemon(id):

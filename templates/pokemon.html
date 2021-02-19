@@ -3,19 +3,39 @@
     <meta charset="UTF-8">
     <meta name="description" content="detalhes sobre o Pokemon escolhido">
     <title>Pokedex - Detalhes do Pokemon</title>
+    <style>
+.background-color-grass {
+  background-color: #20bd71;
+  color: white;
+  border: 2px;
+  margin: 2px;
+  padding: 2px;
+}
+    </style>
 </head>
 <body>
 <h1>Detalhes do {{data.name}}</h1>
 <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="bulbasaur image" width="250" height="300" align="left">
-<table border="1">
+<table border="1" cellpadding=10>
     <tr>
-        <td bgcolor="#e0b982">Tipos</td>
+        <th bgcolor="#FFDEAD">Tiposs</th>
+        <th align="center" bgcolor="#FFDEAD" colspan=value>Fraquezas</th>
     </tr>
     <tr>
-        <td bgcolor="#16c96a">grama</td>
+        <td align="center" bgcolor="#16c96a"><font color="white">
+            grama
+        </font></td>
     </tr>
     <tr>
-        <td bgcolor="#7617d1">venenoso</td>
+        <td align="center" bgcolor="#7617d1"><font color="white">
+            venenoso
+        </font></td>
+    </tr>
+    <tr>
+        <td align="center" bgcolor="#FF4500"><font color="white">fogo</font></td>
+        <td align="center" bgcolor=""><font color="white">psiquico</font></td>
+        <td align="center" bgcolor="#a3bdd1"><font color="white">voador</font></td>
+        <td align="center" bgcolor=""><font color="white">gelo</font></td>
     </tr>
 </table>
 </body>
