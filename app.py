@@ -23,10 +23,7 @@ def pokemons():
 
 @app.route('/pokemon/<int:id>')
 def pokemon(id):
-    html_text = requests.get("https://www.pokemon.com/br/pokedex/bulbasaur").text
-    soup = BeautifulSoup(html_text, "html.parser")
-    name = soup.find("div", class_="pokedex-pokemon-pagination-title").text
     data = {
         "name": "bulbasaur"
     }
-    return render_template("pokemon.html", data=data, name=name)
+    return render_template("pokemon.html", data=data)
