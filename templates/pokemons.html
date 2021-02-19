@@ -1,20 +1,31 @@
-
-
 <html>
- <h1> Lista dos pokemons</h1>
- <title>Pokedex - Lista de Pokemons</title>
- <table border="1">
-<tr>
-     <td bgcolor="#7ddb80"><a href="http://127.0.0.1:5000/pokemon/1"><img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="Bulbasaur" width="50" height="50" align="middle"></a>Bulbasaur<a href="http://127.0.0.1:5000/pokemon/1">Veja as informacoes do Bulbasaur</a></td>
-     <br/>
-     <td bgcolor="#e64d32"><a href="http://127.0.0.1:5000/pokemon/2"><img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" alt="Charmander" width="50" height="50" align="middle"></a>Charmander<a href="http://127.0.0.1:5000/pokemon/2">Veja as informacoes do Charmander</a></td>
-     <br/>
-     <td bgcolor="#7e96e6"><a href="http://127.0.0.1:5000/pokemon/3"><img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="Squirle" width="50" height="50" align="middle"></a>Squirtle<a href="http://127.0.0.1:5000/pokemon/3">Veja as informacoes do Squirtle</a></td>
-     <br/>
-     <td bgcolor="#b81adb"><a href="http://127.0.0.1:5000/pokemon/4"><img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png" alt="Mewtwo" width="50" height="50" align="middle"></a>Mewtow<a href="http://127.0.0.1:5000/pokemon/4">Veja as informacoes do Mewtow</a></td>
-     <br/>
-     <td bgcolor="#b81adb"><a href="http://127.0.0.1:5000/pokemon/5"><img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png" alt="Mew" width="50" height="50" align="middle"></a>Mew<a href="http://127.0.0.1:5000/pokemon/5">Veja as informacoes do Mew</a></td>
- </tr>
- </table>
+<head>
+    <h1> Lista dos pokemons</h1>
+    <title>Pokedex - Lista de Pokemons</title>
+
+</head>
+<body>
+<ol>
+    {% for pokemon in data %}
+    <li>
+        <table border="1">
+            <tr>
+                <td class="colors-{{ pokemon.types.0.type.name }}">
+                    <a href="http://127.0.0.1:5000/pokemon/{{pokemon.id}}">
+                        <img src="{{ pokemon.sprites.other.dream_world.front_default }}" alt="{{pokemon.name}}"
+                             width="50"
+                             height="50" align="middle">
+                    </a>
+                </td>
+
+                <td class="colors-{{ pokemon.types.0.type.name }}" width="150px">{{pokemon.name}} </td>
+
+        </table>
+    </li>
+    {% endfor %}
+</ol>
+
+
+</body>
 </html>
 
