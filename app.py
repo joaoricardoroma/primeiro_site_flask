@@ -1,6 +1,4 @@
 from flask import Flask, render_template
-from bs4 import BeautifulSoup
-import requests
 
 app = Flask(__name__)
 
@@ -17,7 +15,6 @@ def contact():
 
 @app.route('/pokemons')
 def pokemons():
-
     return render_template("pokemons.html", data=[])
 
 
