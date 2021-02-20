@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="detalhes sobre o Pokemon escolhido">
     <title>Pokedex - Detalhes do Pokemon</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
 </head>
 <body style="back-ground:lightblue">
 <h1>Detalhes do {{data.name}}</h1>
@@ -17,50 +17,49 @@
         <td style="vertical-align: top;">
             <table border="1" cellpadding=10 align="">
                 <tr>
-                    <th bgcolor="#FFDEAD">Tipos</th>
-                    <th align="center" bgcolor="#FFDEAD" colspan=2>Fraquezas</th>
-                </tr>
-                <tr>
+                    <th bgcolor="#FFDEAD">Tipos:</th>
                     {% for type_data in data.types %}
                     <td align="center" class="color-{{ type_data.type.name }}">
-                        <font color="white">
-                            {{ type_data.type.name }}
+                        <font color="white">{{ type_data.type.name }}
                         </font>
                     </td>
                     {% endfor %}
-
-
-                    <!--                    <td align="center" bgcolor="#a3bdd1">-->
-                    <!--                        <font color="white">-->
-                    <!--                            voador-->
-                    <!--                        </font>-->
-                    <!--                    </td>-->
-                    <!--                    <td align="center" bgcolor="#87CEEB">-->
-                    <!--                        <font color="white">-->
-                    <!--                            gelo-->
-                    <!--                        </font>-->
-                    <!--                    </td>-->
-                    <!--                    <td align="center" bgcolor="#16c96a">-->
-                    <!--                        <font color="white">-->
-                    <!--                            grama-->
-                    <!--                        </font>-->
-                    <!--                    </td>-->
-                    <!--                    <td align="center" bgcolor="#FF4500">-->
-                    <!--                        <font color="white">-->
-                    <!--                            fogo-->
-                    <!--                        </font>-->
-                    <!--                    </td>-->
-                    <!--                    <td align="center" bgcolor="#eb75df">-->
-                    <!--                        <font color="white">-->
-                    <!--                            psiquico-->
-                    <!--                        </font>-->
-                    <!--                    </td>-->
+                </tr>
+                <tr>
+                    <th align="center" bgcolor="#FFDEAD" colspan=2>
+                        Movimentos
+                    </th>
+                    <td align="center">
+                        <font color="black" >
+                            {{ data.moves.0.move.name }}
+                        </font>
+                    </td>
+                    <td align="center">
+                        <font color="black">
+                            {{ data.moves.1.move.name }}
+                        </font>
+                    </td>
+                    <td align="center">
+                        <font color="black">
+                            {{ data.moves.2.move.name }}
+                        </font>
+                    </td>
+                    <td align="center">
+                        <font color="black">{{ data.moves.3.move.name }}
+                        </font>
+                    </td>
+                </tr>
+                <tr>
+                    <th align="center" bgcolor="#FFDEAD" colspan=2>
+                        Peso
+                    </th>
+                    <td>
+                        {{ data.weight}}
+                    </td>
                 </tr>
             </table>
         </td>
     </tr>
 </table>
-<h1 align="left">Sobre</h1>
-
 </body>
 </html>
