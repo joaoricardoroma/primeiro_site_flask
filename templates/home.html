@@ -1,3 +1,40 @@
-<h1>
-    Seja Bem Vindo
-</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Pokédex - Home page
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body bgcolor="e71837">
+<table align="center">
+    <tr>
+        <td>
+            <a href="http://127.0.0.1:5000/pokemons">
+            <img width="170" alt="Pokédex-image" style="padding: 10px 150px;"
+                 src="https://camo.githubusercontent.com/5d782bc05a528103a38976ddb69634c4fa3603014eb3c69b7adc764213a4072f/68747470733a2f2f696d672e72616e6b6564626f6f73742e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031362f30372f506f6b656d6f6e2d476f2d506f6b2543332541396465782d333030783232392e706e67">
+            </a>
+            <h1 align="center">
+                <font color="white">
+                    Pokédex
+                </font>
+            </h1>
+            <h2 align="center">
+                <font color="white">
+                    Lista de pokemons e suas especificações.
+                </font>
+            </h2>
+            <h4 align="center">
+                <font color="white">
+                    Para acessar clique
+                </font>
+                <a href="http://127.0.0.1:5000/pokemons">
+                    aqui.
+                </a>
+            </h4>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

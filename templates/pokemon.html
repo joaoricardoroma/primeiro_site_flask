@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="detalhes sobre o Pokemon escolhido">
-    <title>Pokedex - Detalhes do Pokemon</title>
+    <title>Pokédex - Detalhes do Pokemon</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
 </head>
-<body style="back-ground:lightblue">
+<body>
 <h1>Detalhes do {{data.name}}</h1>
 <table>
     <tr>
         <td>
-            <img src="{{ data.sprites.other.dream_world.front_default }}" alt="bulbasaur-image" width="300"
+            <img src="{{ data.sprites.other.dream_world.front_default }}" alt="{{ data.name }}-image" width="300"
                  height="300" align="left">
         </td>
         <td style="vertical-align: top;">
@@ -26,7 +26,7 @@
                     {% endfor %}
                 </tr>
                 <tr>
-                    <th align="center" bgcolor="#FFDEAD" colspan=2>
+                    <th align="center" bgcolor="#FFDEAD">
                         Movimentos
                     </th>
                     <td align="center">
@@ -45,22 +45,29 @@
                         </font>
                     </td>
                     <td align="center">
-                        <font color="black">{{ data.moves.3.move.name }}
+                        <font color="black">
+                            {{ data.moves.3.move.name }}
                         </font>
                     </td>
                 </tr>
                 <tr>
-                    <th align="center" bgcolor="#FFDEAD" colspan=2>
+                    <th align="center" bgcolor="#FFDEAD">
                         Peso
                     </th>
                     <td>
-                        {{ data.weight}}
+                        {{ data.weight / 10}} Kg
                     </td>
                 </tr>
             </table>
         </td>
     </tr>
 </table>
-<!--Comentário-->
+<br>
+<br>
+<br>
+<br>
+<a href="http://127.0.0.1:5000/pokemons">
+    Voltar página
+</a>
 </body>
 </html>
