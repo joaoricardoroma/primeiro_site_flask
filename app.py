@@ -21,7 +21,7 @@ def contact():
 @app.route('/pokemons')
 def pokemons():
 
-    r = requests.get("https://pokeapi.co/api/v2/pokemon?limit=20&offset=20")
+    r = requests.get("https://pokeapi.co/api/v2/pokemon?limit=20")
     result_api = r.json()
     pokemons = []
     for pokemon_api in result_api["results"]:
